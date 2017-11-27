@@ -1,0 +1,42 @@
+<!DOCTYPE! html>
+<html>
+<head>
+<title>Testing
+</title>
+</head>
+<body>
+
+<script>
+
+function palindrome(str) {
+  var cleanStr=[];
+  var cc;
+    for (i=0; i<str.length; i++) {
+    cc = str.charCodeAt(i);
+    if(cc >= 48 && cc<= 57 || cc>=65 && cc<=90 || cc>=97 && cc<=122) {
+      cleanStr.push(str[i].toLowerCase());
+    }
+  }
+  for (i=0; i<cleanStr.length/2; i++) {
+    if(cleanStr[i] != cleanStr[cleanStr.length-i-1]) {
+      return false;
+    }
+  }
+console.log(cleanStr);
+return true;
+}
+console.log(palindrome("EYE")+"EYE");
+console.log(palindrome("_eye")+"_eye");
+console.log(palindrome("race car")+"race car");
+console.log(palindrome("not a palindrome")+"not a palindrome");
+console.log(palindrome("A man, a plan, a canal. Panama")+"A man, a plan, a canal. Panama");
+console.log(palindrome("never odd or even")+"never odd or even");
+console.log(palindrome("nope")+"nope");
+console.log(palindrome("almostomla")+"almostomla");
+console.log(palindrome("My age is 0, 0 si ega ym.")+"My age is 0, 0 si ega ym.");
+console.log(palindrome("1 eye for of 1 eye.")+"1 eye for of 1 eye.");
+console.log(palindrome("0_0 (: /-\ :) 0-0")+"0_0 (: /-\ :) 0-0");
+console.log(palindrome("five|\_/|four")+"five|\_/|four");
+</script>
+</body>
+</html>
