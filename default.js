@@ -4,11 +4,10 @@ $section = $(".section");
 
 $section.on("click", function() {
     $.ajax({
-        url: "http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1",
+        url: "http://ron-swanson-quotes.herokuapp.com/v2/quotes",
         success: function(quoteData) {
-            var post = quoteData.shift();
-            $('#quote-quote').text(post.title);
-            $('#quote-author').html(post.content);
+            var post = quoteData[0];
+            $('#quote-quote').text(post);
         },
         error: function() {
             alert("error");
