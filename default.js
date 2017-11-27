@@ -2,7 +2,9 @@ $(document).ready();
 
 $section = $(".section");
 
-$section.on("click", function() {
+$section.on("click", getQuote);
+
+function getQuote() {
     $.ajax({
         url: "https://ron-swanson-quotes.herokuapp.com/v2/quotes",
         success: function(quoteData) {
@@ -15,4 +17,6 @@ $section.on("click", function() {
         cache: false,
         type: 'GET'
     });
-});
+};
+
+$(document).ready(getQuote);
